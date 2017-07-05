@@ -1,0 +1,10 @@
+%h1 Welcome
+
+-if current_user
+  Hello,
+  =current_user.username
+  %br
+  =link_to 'Logout', logout_path
+
+-else
+  =link_to "Login", "https://github.com/login/oauth/authorize?client_id=#{ENV['GITHUB_CLIENT_ID']}&scope=user"
