@@ -7,4 +7,4 @@
   =link_to 'Logout', logout_path
 
 -else
-  =link_to "Login", "https://github.com/login/oauth/authorize?client_id=#{ENV['GITHUB_CLIENT_ID']}&scope=user"
+  =link_to "Login", "/auth/github"

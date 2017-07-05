@@ -50,6 +50,7 @@ gem 'haml'
 gem 'faker'
 gem 'figaro'
 gem 'faraday'
+gem 'omniauth-github'
 
 group :development, :test do
   gem 'rspec-rails'
