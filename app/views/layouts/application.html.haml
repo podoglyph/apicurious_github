@@ -18,6 +18,34 @@
             .form-group
               %input.form-control{:type => 'text', :placeholder => 'Search'}
 
+          %ul.nav.navbar-nav
+            %li Pull requests
+            %li Issues
+            %li Marketplace
+            %li Gist
+
+          %ul.navbar-nav.navbar-right
+            %li Notifications
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                New
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  %a{href: "#"} Action
+                %li
+                  %a{href: "#"} Another action
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                Profile
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  %a{href: "#"} Action
+                %li
+                  %a{href: "#"} Another action
+
+
     .container
       .row
         = yield
