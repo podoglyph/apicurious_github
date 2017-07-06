@@ -37,3 +37,43 @@
       }
   }
 }
+
+// Repo Navigation Tabs
+
+.nav-tabs {
+  > li.active > a {
+    border: 0px;
+    border-bottom: 2px solid #e36209;
+  }
+
+  > li > a {
+    border: 0px;
+    border-radius: 0px;
+  }
+
+  > li > a:hover {
+    background-color: transparent;
+    border: 0px;
+  }
+}
+
+.overview-repos {
+
+  .overview-repo:nth-child(odd) {
+    padding-right: 5px;
+  }
+
+  .overview-repo:nth-child(even) {
+    padding-left: 5px;
+  }
+  
+  .overview-repo {
+    padding: 0px;
+
+    .repo-box {
+      border: 1px solid grey;
+      padding: 16px;
+      margin-bottom: 16px
+    }
+  }
+}

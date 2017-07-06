@@ -1,10 +1,84 @@
-%h1 Welcome
+%container
+  %row
+    .col-md-2
+      User photo
+      =link_to image_tag('GitHub-Mark-Light-120px-plus.png'), root_path
 
--if current_user
-  Hello,
-  =current_user.username
-  %br
-  =link_to 'Logout', logout_path
+    .col-md-8
+      .user-repo-info
+        %ul.nav.nav-tabs
+          %li.active
+            %a{href: '#', role: 'presentation'}
+              Overview
+          %li
+            %a{href: '#', role: 'presentation'}
+              Repositories
+              %span.badge
+                14
+          %li
+            %a{href: '#', role: 'presentation'}
+              Stars
+              %span.badge
+                14
+          %li
+            %a{href: '#', role: 'presentation'}
+              Followers
+              %span.badge
+                14
+          %li
+            %a{href: '#', role: 'presentation'}
+              Following
+              %span.badge
+                14
+      .overview-repos
+        .col-md-6.overview-repo
+          .repo-box
+            .repo-name
+              %span.glyphicon.glyphicon-menu-hamburger(aria-hidden: true)
+              repo-name-placeholder
+            %br
+            .repo-language
+              Javascript
 
--else
-  =link_to "Login", "/auth/github"
+        .col-md-6.overview-repo
+          .repo-box
+            .repo-name
+              %span.glyphicon.glyphicon-menu-hamburger(aria-hidden: true)
+              repo-name-placeholder
+            %br
+            .repo-language
+              Javascript
+
+        .col-md-6.overview-repo
+          .repo-box
+            .repo-name
+              %span.glyphicon.glyphicon-menu-hamburger(aria-hidden: true)
+              repo-name-placeholder
+            %br
+            .repo-language
+              Javascript
+
+        .col-md-6.overview-repo
+          .repo-box
+            .repo-name
+              %span.glyphicon.glyphicon-menu-hamburger(aria-hidden: true)
+              repo-name-placeholder
+            %br
+            .repo-language
+              Javascript
+
+      %br
+      %br
+      %br
+      %br
+      %br
+      %br
+      %br
+      -if current_user
+        Hello,
+        =current_user.username
+        %br
+        =link_to 'Logout', logout_path
+
+      -else
+        =link_to "Login", "/auth/github"
