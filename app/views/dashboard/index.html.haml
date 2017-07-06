@@ -14,22 +14,23 @@
             %a{href: '#', role: 'presentation'}
               Repositories
               %span.badge
-                14
+                =@user_profile[:public_repos]
           %li
             %a{href: '#', role: 'presentation'}
               Stars
               %span.badge
-                14
+                =@num_stars
           %li
             %a{href: '#', role: 'presentation'}
               Followers
               %span.badge
-                14
+                =@user_profile[:followers]
           %li
             %a{href: '#', role: 'presentation'}
               Following
               %span.badge
-                14
+                =@user_profile[:following]
+
       .overview-repos
         .col-md-6.overview-repo
           .repo-box
@@ -77,8 +78,8 @@
       -if current_user
         Hello,
         =current_user.username
+        
         %br
         =link_to 'Logout', logout_path
-
       -else
         =link_to "Login", "/auth/github"
