@@ -7,14 +7,24 @@
   color: rgba(255,255,255,0.75);
   background-color: #24292e;
   border: none;
+  border-radius: 0px;
+
+  .header-container {
+    width: 980px;
+    margin: 0 auto;
+    padding: 0px;
+  }
 
   .home-logo {
     float: left;
     margin-top: 7px;
+
+    img {
+      height: 32px;
+    }
   }
 
   .form-control {
-    min-height: 30px;
     font-size: inherit;
     color: #fff;
     background-color: rgba(255,255,255,0.125);

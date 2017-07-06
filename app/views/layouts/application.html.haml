@@ -8,11 +8,12 @@
     = javascript_include_tag 'application'
   %body
     %nav.navbar.navbar-default
-      .container-fluid
+      .header-container
         .navbar-header
+          =link_to image_tag('GitHub-Mark-Light-64px.png'), root_path, :class => 'home-logo'
 
         .collapse.navbar-collapse
-          =link_to image_tag('GitHub-Mark-Light-32px.png'), root_path, :class => 'home-logo'
+
           %form.navbar-form.navbar-left.search-form
             .form-group
               %input.form-control{:type => 'text', :placeholder => 'Search'}
