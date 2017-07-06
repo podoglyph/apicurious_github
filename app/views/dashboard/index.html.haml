@@ -1,8 +1,8 @@
 %container
   %row
-    .col-md-2
-      User photo
-      =link_to image_tag('GitHub-Mark-Light-120px-plus.png'), root_path
+    .col-md-2.user-profile
+      .user-avatar
+        =link_to image_tag(@user_profile[:avatar_url]), root_path
 
     .col-md-8
       .user-repo-info
@@ -32,41 +32,15 @@
                 =@user_profile[:following]
 
       .overview-repos
-        .col-md-6.overview-repo
-          .repo-box
-            .repo-name
-              %span.glyphicon.glyphicon-menu-hamburger(aria-hidden: true)
-              repo-name-placeholder
-            %br
-            .repo-language
-              Javascript
-
-        .col-md-6.overview-repo
-          .repo-box
-            .repo-name
-              %span.glyphicon.glyphicon-menu-hamburger(aria-hidden: true)
-              repo-name-placeholder
-            %br
-            .repo-language
-              Javascript
-
-        .col-md-6.overview-repo
-          .repo-box
-            .repo-name
-              %span.glyphicon.glyphicon-menu-hamburger(aria-hidden: true)
-              repo-name-placeholder
-            %br
-            .repo-language
-              Javascript
-
-        .col-md-6.overview-repo
-          .repo-box
-            .repo-name
-              %span.glyphicon.glyphicon-menu-hamburger(aria-hidden: true)
-              repo-name-placeholder
-            %br
-            .repo-language
-              Javascript
+        -@user_repos[0..5].each do |repo|
+          .col-md-6.overview-repo
+            .repo-box
+              .repo-name
+                %span.glyphicon.glyphicon-menu-hamburger(aria-hidden: true)
+                =repo[:name]
+              %br
+              .repo-language
+                =repo[:language]
 
       %br
       %br
@@ -78,7 +52,7 @@
       -if current_user
         Hello,
         =current_user.username
-        
+
         %br
         =link_to 'Logout', logout_path
       -else
