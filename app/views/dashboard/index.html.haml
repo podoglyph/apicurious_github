@@ -1,59 +1,57 @@
-%container
-  %row
-    .col-md-2.user-profile
-      .user-avatar
-        =link_to image_tag(@user_profile[:avatar_url]), root_path
+.col-md-3.user-profile
+  .user-avatar
+    =link_to image_tag(@user_profile[:avatar_url]), root_path
 
-    .col-md-8
-      .user-repo-info
-        %ul.nav.nav-tabs
-          %li.active
-            %a{href: '#', role: 'presentation'}
-              Overview
-          %li
-            %a{href: '#', role: 'presentation'}
-              Repositories
-              %span.badge
-                =@user_profile[:public_repos]
-          %li
-            %a{href: '#', role: 'presentation'}
-              Stars
-              %span.badge
-                =@num_stars
-          %li
-            %a{href: '#', role: 'presentation'}
-              Followers
-              %span.badge
-                =@user_profile[:followers]
-          %li
-            %a{href: '#', role: 'presentation'}
-              Following
-              %span.badge
-                =@user_profile[:following]
+.col-md-9
+  .user-repo-info
+    %ul.nav.nav-tabs
+      %li.active
+        %a{href: '#', role: 'presentation'}
+          Overview
+      %li
+        %a{href: '#', role: 'presentation'}
+          Repositories
+          %span.badge
+            =@user_profile[:public_repos]
+      %li
+        %a{href: '#', role: 'presentation'}
+          Stars
+          %span.badge
+            =@num_stars
+      %li
+        %a{href: '#', role: 'presentation'}
+          Followers
+          %span.badge
+            =@user_profile[:followers]
+      %li
+        %a{href: '#', role: 'presentation'}
+          Following
+          %span.badge
+            =@user_profile[:following]
 
-      .overview-repos
-        -@user_repos[0..5].each do |repo|
-          .col-md-6.overview-repo
-            .repo-box
-              .repo-name
-                %span.glyphicon.glyphicon-menu-hamburger(aria-hidden: true)
-                =repo[:name]
-              %br
-              .repo-language
-                =repo[:language]
+  .overview-repos
+    -@user_repos[0..5].each do |repo|
+      .col-md-6.overview-repo
+        .repo-box
+          .repo-name
+            %span.glyphicon.glyphicon-menu-hamburger(aria-hidden: true)
+            =repo[:name]
+          %br
+          .repo-language
+            =repo[:language]
 
-      %br
-      %br
-      %br
-      %br
-      %br
-      %br
-      %br
-      -if current_user
-        Hello,
-        =current_user.username
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  -if current_user
+    Hello,
+    =current_user.username
 
-        %br
-        =link_to 'Logout', logout_path
-      -else
-        =link_to "Login", "/auth/github"
+    %br
+    =link_to 'Logout', logout_path
+  -else
+    =link_to "Login", "/auth/github"

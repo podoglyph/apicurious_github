@@ -36,8 +36,20 @@
         font-size: inherit;
       }
   }
+
+  // .navbar-nav li {
+  //   line-height: 50px;
+  // }
 }
 
+//Main
+.no-padding {
+  padding: 0px;
+}
+
+.container {
+  max-width: 980px;
+}
 // Repo Navigation Tabs
 
 .nav-tabs {
@@ -81,6 +93,6 @@
 
 .user-avatar img {
   display: block;
-  max-width: 100%;
+  max-width: 229px;
   border-radius: 6px;
 }

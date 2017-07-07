@@ -19,22 +19,27 @@
               %input.form-control{:type => 'text', :placeholder => 'Search'}
 
           %ul.nav.navbar-nav
-            %li Pull requests
-            %li Issues
-            %li Marketplace
-            %li Gist
+            %li
+              =link_to 'Pull requests', '#'
+            %li
+              =link_to 'Issues', '#'
+            %li
+              =link_to 'Marketplace', '#'
+            %li
+              =link_to 'Gist', '#'
 
-          %ul.navbar-nav.navbar-right
-            %li Notifications
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              =link_to 'Notifications', '#'
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
                 New
                 %b.caret
               %ul.dropdown-menu
                 %li
-                  %a{href: "#"} Action
+                  =link_to 'Action', '#'
                 %li
-                  %a{href: "#"} Another action
+                  =link_to 'Another action', '#'
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
                 Profile
@@ -46,6 +51,6 @@
                   %a{href: "#"} Another action
 
 
-    .container
+    .container.no-padding
       .row
         = yield
