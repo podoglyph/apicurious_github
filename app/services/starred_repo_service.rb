@@ -6,13 +6,13 @@ class StarredRepoService
   end
 
   def find_repos
-    raw_user_starred = conn.get "/user/starred?access_token=#{user.token}"
+    raw_user_starred = conn.get "/user/starred?access_token=#{access_token}"
 
     JSON.parse(raw_user_starred.body, symbolize_names: true)
   end
 
   def get_count
-    raw_stars = conn.get("/user/starred?access_token=#{user.token}")
+    raw_stars = conn.get("/user/starred?access_token=#{access_token}")
 
     parsed_stars = JSON.parse(raw_stars.body, symbolize_names: true)
 
@@ -30,5 +30,9 @@ class StarredRepoService
   private
 
     attr_reader :conn, :user
+
+    def access_token
+      user.token
+    end
 
 end
