@@ -15,8 +15,4 @@ class User < ApplicationRecord
     user
   end
 
-  # def self.get_profile(user)
-  #   UserProfileService.get_profile(user)
-  # end
-
 end
