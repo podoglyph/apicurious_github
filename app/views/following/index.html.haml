@@ -1,6 +1,6 @@
 .col-md-3.user-profile
   .user-avatar
-    =link_to image_tag(@user_profile[:avatar_url]), root_path
+    =link_to image_tag(current_user.image_url), root_path
 
 .col-md-9
   .user-repo-info
@@ -12,7 +12,7 @@
         %a{href: repos_path, role: 'presentation'}
           Repositories
           %span.badge
-            =@user_profile[:public_repos]
+            =current_user.num_public_repos
       %li
         %a{href: starred_path, role: 'presentation'}
           Stars
@@ -22,12 +22,12 @@
         %a{href: followers_path, role: 'presentation'}
           Followers
           %span.badge
-            =@user_profile[:followers]
+            =current_user.num_followers
       %li
         %a{href: following_path, role: 'presentation'}
           Following
           %span.badge
-            =@user_profile[:following]
+            =current_user.num_following
 
   -@user_following.each do |f|
     =f[:login]

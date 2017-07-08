@@ -10,7 +10,7 @@
         %a{href: repos_path, role: 'presentation'}
           Repositories
           %span.badge
-            =@user_profile[:public_repos]
+            =current_user.num_public_repos
       %li
         %a{href: starred_path, role: 'presentation'}
           Stars
@@ -20,11 +20,11 @@
         %a{href: followers_path, role: 'presentation'}
           Followers
           %span.badge
-            =@user_profile[:followers]
+            =current_user.num_followers
       %li
         %a{href: following_path, role: 'presentation'}
           Following
           %span.badge
-            =@user_profile[:following]
+            =current_user.num_following
 
   =render partial: "/repos/repo_list"
