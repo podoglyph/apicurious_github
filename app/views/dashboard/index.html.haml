@@ -47,11 +47,3 @@
   %br
   %br
   %br
-  -if current_user
-    Hello,
-    =current_user.username
-
-    %br
-    =link_to 'Logout', logout_path
-  -else
-    =link_to "Login", "/auth/github"

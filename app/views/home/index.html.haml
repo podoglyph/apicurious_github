@@ -1,0 +1,12 @@
+
+
+-if current_user
+  Hello,
+  =current_user.username
+
+  %br
+  =link_to "Your Dashboard", dashboard_index_path
+  %br
+  =link_to 'Sign out', logout_path
+-else
+  =link_to "Sign in", "/auth/github"
