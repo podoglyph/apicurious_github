@@ -17,7 +17,7 @@
         %a{href: starred_path, role: 'presentation'}
           Stars
           %span.badge
-            =@num_stars
+            =@star_count
       %li
         %a{href: followers_path, role: 'presentation'}
           Followers
@@ -28,6 +28,6 @@
           Following
           %span.badge
             =@user_profile[:following]
-  
+
   -@starred.each do |s|
     =s.repo_name

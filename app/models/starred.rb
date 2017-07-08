@@ -11,4 +11,8 @@ class Starred
     end
   end
 
+  def self.get_count(user)
+    StarredRepoService.get_count(user)
+  end
+
 end
