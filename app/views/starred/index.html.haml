@@ -28,6 +28,6 @@
           Following
           %span.badge
             =@user_profile[:following]
-
-  -@user_starred.each do |s|
-    =s[:name]
+  
+  -@starred.each do |s|
+    =s.repo_name
