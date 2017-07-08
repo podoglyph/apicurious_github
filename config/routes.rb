@@ -6,4 +6,8 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboard#index', as: 'dashboard'
   get '/repos', to: 'repos#index', as: 'repos'
+  get '/followers', to: 'followers#index'
+  get '/following', to: 'following#index'
+  get '/starred', to: 'starred#index'
+
 end

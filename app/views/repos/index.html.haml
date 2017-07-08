@@ -4,7 +4,7 @@
   .user-repo-info
     %ul.nav.nav-tabs
       %li.active
-        %a{href: '#', role: 'presentation'}
+        %a{href: dashboard_path, role: 'presentation'}
           Overview
       %li
         %a{href: repos_path, role: 'presentation'}
@@ -12,17 +12,17 @@
           %span.badge
             =@user_profile[:public_repos]
       %li
-        %a{href: '#', role: 'presentation'}
+        %a{href: starred_path, role: 'presentation'}
           Stars
           %span.badge
             =@num_stars
       %li
-        %a{href: '#', role: 'presentation'}
+        %a{href: followers_path, role: 'presentation'}
           Followers
           %span.badge
             =@user_profile[:followers]
       %li
-        %a{href: '#', role: 'presentation'}
+        %a{href: following_path, role: 'presentation'}
           Following
           %span.badge
             =@user_profile[:following]

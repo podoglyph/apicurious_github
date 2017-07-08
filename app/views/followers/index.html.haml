@@ -1,8 +1,12 @@
+.col-md-3.user-profile
+  .user-avatar
+    =link_to image_tag(@user_profile[:avatar_url]), root_path
+
 .col-md-9
   .user-repo-info
     %ul.nav.nav-tabs
       %li.active
-        %a{href: '#', role: 'presentation'}
+        %a{href: dashboard_path, role: 'presentation'}
           Overview
       %li
         %a{href: repos_path, role: 'presentation'}
@@ -25,5 +29,6 @@
           %span.badge
             =@user_profile[:following]
 
-
-  =render partial: "/dashboard/overview_repos"
+  -@user_followers.each do |f|
+    =f[:login]
+    %br
