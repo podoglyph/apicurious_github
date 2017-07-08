@@ -10,8 +10,8 @@ RSpec.describe "When user is logs in" do
       VCR.use_cassette('user_can_see_all_repos') do
         visit repos_path
 
-        expect(current_path).to .eq('/repos')
-
+        expect(current_path).to eq('/repos')
+        
         expect(page).to have_selector(".user-repo", count: 15)
 
         within first(".user-repo") do

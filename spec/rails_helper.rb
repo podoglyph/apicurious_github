@@ -13,7 +13,7 @@ require 'vcr'
 VCR.configure do |config|
   config.cassette_library_dir = "spec/cassettes"
   config.hook_into :webmock
-  config.filter_sensitive_data('<NREL_API_KEY>') {ENV['nrel_api_key']}
+  config.filter_sensitive_data('<GITHUB_ACCESS_TOKEN>') {ENV['GITHUB_ACCESS_TOKEN']}
 end
 
 Shoulda::Matchers.configure do |config|
