@@ -120,7 +120,11 @@ body {
       border: 1px solid #d1d5da;
       border-radius: 3px;
       padding: 16px;
-      margin-bottom: 16px
+      margin-bottom: 16px;
+
+      .repo-name {
+        font-weight: 600;
+      }
     }
   }
 }
@@ -141,7 +145,11 @@ body {
     border: 1px solid #d1d5da;
     border-radius: 3px;
     padding: 16px;
-    margin-bottom: 16px
+    margin-bottom: 16px;
+
+    .repo-name {
+      font-weight: 600;
+    }
   }
 
 }
