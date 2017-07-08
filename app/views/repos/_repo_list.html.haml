@@ -1,4 +1,6 @@
-.user_repos
-  -@user_repos[0..15].map do |repo|
-    .col-md-12.user-repo
-      =repo[:name]
+.repos-list
+  -@user_repos.map do |repo|
+    .col-md-12.overview-repo
+      .repo-box
+        .repo-name
+          =repo[:name]
