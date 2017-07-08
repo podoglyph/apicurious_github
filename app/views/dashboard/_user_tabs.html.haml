@@ -1,5 +1,3 @@
-=render partial: "/dashboard/profile"
-
 .col-md-9
   .user-repo-info
     %ul.nav.nav-tabs
@@ -27,4 +25,5 @@
           %span.badge
             =@user_profile[:following]
 
-  =render partial: "/repos/repo_list"
+
+  =render partial: "/dashboard/overview_repos"

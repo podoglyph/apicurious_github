@@ -1,0 +1,10 @@
+.overview-repos
+  -@user_repos[0..5].each do |repo|
+    .col-md-6.overview-repo
+      .repo-box
+        .repo-name
+          %span.glyphicon.glyphicon-menu-hamburger(aria-hidden: true)
+          =repo[:name]
+        %br
+        .repo-language
+          =repo[:language]
