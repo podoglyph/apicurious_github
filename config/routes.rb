@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#delete'
 
   resources :dashboard, only: [:index]
+  resources :repos, only: [:index]
 end

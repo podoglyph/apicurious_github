@@ -5,17 +5,23 @@ require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
-    # Capybara
-    require 'capybara/rails'
-    # Require shoulda-matchers and config it with Rails and RSpec
-    require 'shoulda-matchers'
+require 'capybara/rails'
+require 'shoulda-matchers'
+require 'webmock/rspec'
+require 'vcr'
 
-    Shoulda::Matchers.configure do |config|
-      config.integrate do |with|
-        with.test_framework :rspec
-        with.library :rails
-      end
-    end
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/cassettes"
+  config.hook_into :webmock
+  config.filter_sensitive_data('<NREL_API_KEY>') {ENV['nrel_api_key']}
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -40,7 +46,7 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
-
+  config.include FeatureHelpers, type: :feature
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.

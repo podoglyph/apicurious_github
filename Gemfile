@@ -54,6 +54,11 @@ gem 'figaro'
 gem 'faraday'
 gem 'omniauth-github'
 
+group :test do
+  gem 'vcr'
+  gem 'webmock'
+end
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
@@ -62,4 +67,5 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry-state'
   gem 'erb2haml'
+  gem 'rack_session_access'
 end
