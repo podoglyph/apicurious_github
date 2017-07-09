@@ -7,6 +7,7 @@ class RepoService
 
   def get_repos
     raw_user_repos = conn.get "/user/repos?access_token=#{access_token}"
+
     JSON.parse(raw_user_repos.body, symbolize_names: true)
   end
 

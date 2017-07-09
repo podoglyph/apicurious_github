@@ -4,11 +4,11 @@
       .repo-box
         .repo-name
           %span.glyphicon.glyphicon-menu-hamburger(aria-hidden: true)
-          =link_to repo[:name], repo[:url]
+          =link_to repo.name, repo.url
         .updated
           Updated
-          =distance_of_time_in_words(Time.now,repo[:pushed_at])
+          =distance_of_time_in_words(Time.now,repo.pushed)
           ago
         %br
         .repo-language
-          =repo[:language]
+          =repo.language
