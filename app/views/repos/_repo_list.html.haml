@@ -3,12 +3,12 @@
     .col-md-12.overview-repo
       .repo-box
         .repo-name
-          =link_to repo[:name], repo[:url]
+          =link_to repo.name, repo.url
         .repo-description
-          =repo[:description]
+          =repo.description
         .updated
           Updated
-          =distance_of_time_in_words(Time.now,repo[:updated_at])
+          =distance_of_time_in_words(Time.now,repo.pushed)
         %br
         .repo-language
-          =repo[:language]
+          =repo.language
