@@ -1,3 +1,4 @@
 .col-md-3.user-profile
   .user-avatar
-    =link_to image_tag(current_user.image_url), root_path
+    -if current_user
+      =link_to image_tag(current_user.image_url), root_path

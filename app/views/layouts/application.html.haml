@@ -42,7 +42,7 @@
                   =link_to 'Another action', '#'
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-                =image_tag current_user.image_url, class: 'profile_icon'
+                =image_tag current_user.image_url, class: 'profile_icon' if current_user
                 %b.caret
               %ul.dropdown-menu
                 %li

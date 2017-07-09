@@ -13,5 +13,3 @@ Initialize:
   * `rails db:create`
   * `rails db:migrate`
   * Visit `localhost:3000` and click "Sign In" to authenticate your user.
-
-* How to run the test suite
