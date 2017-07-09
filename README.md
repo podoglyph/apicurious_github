@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+APICurious_GitHub
 
-Things you may want to cover:
+A partial clone of a GitHub user's profile built from the GitHub API using Ruby 2.4.1 and PostgreSQL.
 
-* Ruby version
+Features:
+  * OAuth login and authentication process
+  * Use of Service objects to streamline API requests
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
+Initialize:
+  * `git clone git@github.com:podoglyph/apicurious_github.git`
+  * `rails db:create`
+  * `rails db:migrate`
+  * Visit `localhost:3000` and click "Sign In" to authenticate your user.
 
 * How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
