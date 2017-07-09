@@ -4,6 +4,11 @@
       .repo-box
         .repo-name
           =link_to repo[:name], repo[:url]
+        .repo-description
+          =repo[:description]
+        .updated
+          Updated
+          =distance_of_time_in_words(Time.now,repo[:updated_at])
         %br
         .repo-language
           =repo[:language]
