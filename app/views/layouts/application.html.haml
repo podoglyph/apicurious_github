@@ -30,10 +30,10 @@
 
           %ul.nav.navbar-nav.navbar-right
             %li
-              =link_to 'Notifications', '#'
+              =link_to '', '#', class: 'glyphicon glyphicon-bell'
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-                New
+                %span.glyphicon.glyphicon-plus
                 %b.caret
               %ul.dropdown-menu
                 %li
@@ -42,7 +42,7 @@
                   =link_to 'Another action', '#'
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-                Profile
+                =image_tag current_user.image_url, class: 'profile_icon'
                 %b.caret
               %ul.dropdown-menu
                 %li
