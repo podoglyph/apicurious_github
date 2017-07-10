@@ -9,8 +9,8 @@ class Repo
     @description = repo[:description]
   end
 
-  def self.get_repos(user)
-    RepoService.get_repos(user).map do |raw_repo|
+  def self.repos(user)
+    GithubService.repos(user).map do |raw_repo|
       new(raw_repo)
     end
   end

@@ -30,9 +30,11 @@ RSpec.describe "When user is logs in" do
         uid: "12345678",
         extra: {
           raw_info: {
-            name: "Jimbo",
-            login: "podoglyph",
-          }
+            public_repos: 33,
+            following: 33,
+            followers: 33,
+            login: "podoglyph"
+          },
         },
         credentials: {
           token: ENV["GITHUB_ACCESS_TOKEN"],

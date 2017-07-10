@@ -49,14 +49,15 @@ RSpec.describe "User logs in using github" do
       uid: "12345678",
       info: {
         nickname: "podoglyph",
-        name: "Jimbo",
+        name: "Petey",
         image: "https://avatars3.githubusercontent.com/u/8197693?v=3"
       },
       extra: {
         raw_info: {
           public_repos: 33,
           following: 33,
-          followers: 33
+          followers: 33,
+          login: "podoglyph"
         },
       },
       credentials: {
