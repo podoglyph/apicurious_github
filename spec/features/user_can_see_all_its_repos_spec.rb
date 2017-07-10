@@ -22,25 +22,5 @@ RSpec.describe "When user is logs in" do
         end
       end
     end
-
-    def stub_omniauth
-      OmniAuth.config.test_mode = true
-      OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
-        provider: 'github',
-        uid: "12345678",
-        extra: {
-          raw_info: {
-            public_repos: 33,
-            following: 33,
-            followers: 33,
-            login: "podoglyph"
-          },
-        },
-        credentials: {
-          token: ENV["GITHUB_ACCESS_TOKEN"],
-        }
-      })
-    end
-
   end
 end
